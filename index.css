@@ -1,0 +1,62 @@
+:root {
+    --clockFaceColor: rgb(255, 255, 255, 0.3);
+    --clockOutlineColor: black;
+    --hourMarkColor: black;
+    --hourHandColor: black;
+    --minuteHandColor: black;
+    --secondHandColor: #d40000;
+    --secondHandPointColor: rgb(0, 0, 0, 0);
+    --separatorColor: black;
+}
+.teamMateContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 15px;
+}
+.teamMateClock {
+    height: 320px;
+    margin: auto;
+}
+
+.timezoneLabel {
+    color: inherit;
+    text-align: center;
+    font-size: 20px;
+}
+.teamMemberName {
+    font-size: 24px;
+    text-align: center;
+    margin: 10px;
+    height: 55px;
+    overflow: auto;
+}
+.digitalClock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border: 5px solid var(--clockOutlineColor);
+    background-color: var(--clockFaceColor);
+}
+.hour {
+    color: var(--hourHandColor);
+}
+.minute {
+    color: var(--minuteHandColor);
+}
+.second {
+    color: var(--secondHandColor);
+}
+.separator {
+    color: var(--separatorColor);
+}
+.analogClock {
+    height: 150px;
+    width: 150px;
+}
+.amPM {
+    padding-left: 5px;
+}

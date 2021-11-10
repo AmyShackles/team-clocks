@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="index.css" />
+    </head>
+    <body>
+        <script type="module">
+            import { init, createClock, getTimeZone } from "./init.js";
+            const teamMates = [
+                {
+                    name: "Amy",
+                    timezone: "US/Pacific",
+                    clockType: "digital",
+                    militaryTime: true,
+                },
+                {
+                    name: `Agus
+        Brashan
+        Mati
+        Román`,
+                    timezone: "America/Argentina/Buenos_Aires",
+                    clockType: "digital",
+                },
+                {
+                    name: "Mark",
+                    timezone: "US/Eastern",
+                    clockType: "analog",
+                    militaryTime: true,
+                },
+            ];
+
+            const clocks = init(teamMates);
+            console.log(clocks);
+            function makeClocks() {
+                clocks.forEach(
+                    ({ clock, clockType, militaryTime, timezone }) => {
+                        let context =
+                            clockType === "digital"
+                                ? {}
+                                : clock.getContext("2d");
+                        let time = getTimeZone(timezone);
+                        createClock(context, clock, time, militaryTime);
+                    }
+                );
+                window.requestAnimationFrame(makeClocks);
+            }
+
+            window.requestAnimationFrame(makeClocks);
+        </script>
+    </body>
+</html>
